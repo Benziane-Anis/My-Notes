@@ -11,18 +11,18 @@ class MyTexteField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       maxLines: maxLInes,
-      style: TextStyle(fontSize: 22),
+      style: const TextStyle(fontSize: 22),
       cursorColor: Colors.tealAccent,
       decoration: InputDecoration(
         hintText: hint,
-        hintStyle: TextStyle(color: Colors.tealAccent,fontSize: 22,),
+        hintStyle: const TextStyle(color: Colors.tealAccent,fontSize: 22,),
         focusedBorder:OutlineInputBorder(
             borderRadius: BorderRadius.circular(24),
-            borderSide: BorderSide(color: Colors.tealAccent)
+            borderSide: const BorderSide(color: Colors.tealAccent)
         ),
         enabledBorder:OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: BorderSide(color: Colors.white)
+          borderSide: const BorderSide(color: Colors.white)
         ),
       ),
     );

@@ -44,7 +44,7 @@ class Home extends StatelessWidget {
             borderRadius: BorderRadius.circular(20)
           ),
           context: context, builder: (context) {
-          return AddNoteButtomSheet();
+          return const AddNoteButtomSheet();
         },);
       },child: const Icon(Icons.add)),
     );

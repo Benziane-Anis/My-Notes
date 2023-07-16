@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_notes/screens/edit.dart';
 import 'package:my_notes/screens/home.dart';
 
 void main() {
@@ -17,7 +18,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark(),
       initialRoute: "/",
       routes: {
-        "/": (context)=> const Home()
+        "/": (context)=> const Home(),
+        "Edit": (context)=> const Edit(),
+
       },
 
 
