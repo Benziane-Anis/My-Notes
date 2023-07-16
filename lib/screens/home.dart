@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_notes/items/custem-ListView-note.dart';
-import 'package:my_notes/items/custem_note.dart';
+
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -20,24 +20,24 @@ class Home extends StatelessWidget {
               width:50,
               decoration: BoxDecoration(
                 color: Colors.grey.shade800,
-                borderRadius: BorderRadius.all(Radius.circular(15))
+                borderRadius: const BorderRadius.all(Radius.circular(15))
               ),
               child: IconButton(onPressed: () {
 
-              }, icon: Icon(Icons.search_sharp,size: 28,)),
+              }, icon: const Icon(Icons.search_sharp,size: 28,)),
             ),
           )
         ],
         backgroundColor: Colors.transparent,
-        title: Text("Notes",style: TextStyle(fontSize: 30),),
+        title: const Text("Notes",style: TextStyle(fontSize: 30),),
       ),
-      body: SafeArea(
+      body: const SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(18.0),
+          padding: EdgeInsets.all(18.0),
           child: ListViewNotes()
         ),
       ),
-      floatingActionButton:  FloatingActionButton(onPressed: () {  },child: Icon(Icons.add)),
+      floatingActionButton:  FloatingActionButton(onPressed: () {  },child: const Icon(Icons.add)),
     );
   }
 }
