@@ -25,7 +25,8 @@ class AddNoteButtomSheet extends StatelessWidget {
               color: Colors.tealAccent,
               minWidth: MediaQuery.of(context).size.width,
               shape: OutlineInputBorder(borderRadius: BorderRadius.circular(16)),
-            )
+            ),
+            SizedBox(height: 225,)
           ],
         ),
       ),
