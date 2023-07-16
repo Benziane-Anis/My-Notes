@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_notes/items/custem-ListView-note.dart';
 import 'package:my_notes/items/custem_note.dart';
 
 class Home extends StatelessWidget {
@@ -33,14 +34,13 @@ class Home extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(18.0),
-          child: ListView.builder(
-            //itemExtent: 150,
-            itemCount: 1,itemBuilder: (context, index) => NoteItem(),),
+          child: ListViewNotes()
         ),
       ),
       floatingActionButton:  FloatingActionButton(onPressed: () {  },child: Icon(Icons.add)),
     );
   }
 }
+
 
 
