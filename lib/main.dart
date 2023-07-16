@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:my_notes/screens/edit.dart';
 import 'package:my_notes/screens/home.dart';
+import 'constentes.dart';
 
-void main() {
+void main()async {
+  await Hive.initFlutter();
+  await Hive.openBox(notesBox);
   runApp(const MyApp());
 }
 
