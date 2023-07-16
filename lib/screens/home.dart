@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_notes/items/custem-ListView-note.dart';
+import 'package:my_notes/items/custom_addnote.dart';
 
 
 class Home extends StatelessWidget {
@@ -37,10 +38,16 @@ class Home extends StatelessWidget {
           child: ListViewNotes()
         ),
       ),
-      floatingActionButton:  FloatingActionButton(onPressed: () {  },child: const Icon(Icons.add)),
+      floatingActionButton:  FloatingActionButton(onPressed: () {
+        showModalBottomSheet(context: context, builder: (context) {
+          return AddNoteButtomSheet();
+        },);
+      },child: const Icon(Icons.add)),
     );
   }
 }
+
+
 
 
 
