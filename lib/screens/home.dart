@@ -39,7 +39,11 @@ class Home extends StatelessWidget {
         ),
       ),
       floatingActionButton:  FloatingActionButton(onPressed: () {
-        showModalBottomSheet(context: context, builder: (context) {
+        showModalBottomSheet(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20)
+          ),
+          context: context, builder: (context) {
           return AddNoteButtomSheet();
         },);
       },child: const Icon(Icons.add)),
