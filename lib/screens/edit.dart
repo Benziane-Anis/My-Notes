@@ -28,7 +28,7 @@ class Edit extends StatelessWidget {
           )
         ],
         backgroundColor: Colors.transparent,
-        title: const Text("Edit",style: TextStyle(fontSize: 30),),
+        title: const Text("Edit Note",style: TextStyle(fontSize: 30),),
       ),
       body: SafeArea(child: EditNoteViewBody()),
     );
