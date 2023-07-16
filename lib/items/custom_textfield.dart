@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
 
 class MyTexteField extends StatelessWidget {
-  const MyTexteField({super.key});
+
+  const MyTexteField({super.key, required this.hint,  this.maxLInes=1});
+
+  final String hint;
+  final int maxLInes;
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      maxLines: maxLInes,
       style: TextStyle(fontSize: 22),
       cursorColor: Colors.tealAccent,
       decoration: InputDecoration(
-        hintText: "Title",
+        hintText: hint,
         hintStyle: TextStyle(color: Colors.tealAccent,fontSize: 22,),
         focusedBorder:OutlineInputBorder(
             borderRadius: BorderRadius.circular(24),
