@@ -2,14 +2,21 @@ import 'package:flutter/material.dart';
 
 class MyTexteField extends StatelessWidget {
 
-  const MyTexteField({super.key, required this.hint,  this.maxLInes=1});
+  const MyTexteField({super.key, required this.hint,  this.maxLInes=1, required this.onSaved});
 
   final String hint;
   final int maxLInes;
+  final void Function(String?)? onSaved;
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
+      onSaved: onSaved,
+      validator: (value) {
+        if(value?.isEmpty ?? true){
+          return 'feild id required';
+        }
+      },
       maxLines: maxLInes,
       style: const TextStyle(fontSize: 22),
       cursorColor: Colors.tealAccent,

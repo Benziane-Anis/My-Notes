@@ -11,9 +11,9 @@ class EditNoteViewBody extends StatelessWidget {
       child: Column(
 
         children: const [
-          MyTexteField(hint: "Titel"),
+         // MyTexteField(hint: "Titel"),
           SizedBox(height: 10,),
-          MyTexteField(hint: "Content",maxLInes: 5),
+          //MyTexteField(hint: "Content",maxLInes: 5),
 
         ],
       ),
