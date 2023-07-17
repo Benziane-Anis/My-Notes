@@ -1,22 +1,16 @@
 part of 'addnote_cubit.dart';
 
-class AddnoteState extends Equatable {
-  final LoadStatus loadDataStatus;
+@immutable
+abstract class AddnoteState {}
 
-  const AddnoteState({
-    this.loadDataStatus = LoadStatus.initial,
-  });
+class AddNoteInitial extends AddnoteState {}
 
-  @override
-  List<Object?> get props => [
-        loadDataStatus,
-      ];
+class AddNoteLoading extends AddnoteState {}
 
-  AddnoteState copyWith({
-    LoadStatus? loadDataStatus,
-  }) {
-    return AddnoteState(
-      loadDataStatus: loadDataStatus ?? this.loadDataStatus,
-    );
-  }
+class AddNoteSuccess extends AddnoteState {}
+
+class AddNoteFailure extends AddnoteState {
+  final String error;
+
+  AddNoteFailure(this.error);
 }

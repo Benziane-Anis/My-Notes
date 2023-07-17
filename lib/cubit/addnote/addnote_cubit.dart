@@ -1,19 +1,24 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:equatable/equatable.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:my_notes/constentes.dart';
+import 'package:my_notes/models/note_model.dart';
 
 part 'addnote_state.dart';
 
 class AddnoteCubit extends Cubit<AddnoteState> {
-  AddnoteCubit() : super(const AddnoteState());
+  AddnoteCubit() : super( AddNoteInitial());
 
-  Future<void> loadInitialData() async {
-    emit(state.copyWith(loadDataStatus: LoadStatus.initial));
-    try {
-      //Todo: add API calls
-      emit(state.copyWith(loadDataStatus: LoadStatus.success));
-    } catch (e, s) {
-      //Todo: should print exception here
-      emit(state.copyWith(loadDataStatus: LoadStatus.failure));
-    }
+  addNote(NoteModel note) async{
+    emit(AddNoteLoading());
+  try {
+    var noteBox = Hive.box<NoteModel>(notesBox);
+    emit(AddNoteSuccess());
+     await noteBox.add(note);
+  } catch (e) {
+    emit(AddNoteFailure(e.toString()));
   }
+  }
+
+
 }
